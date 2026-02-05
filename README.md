@@ -50,6 +50,47 @@ npm install
 npm test
 ```
 
+## dApp (Next.js frontend)
+
+A teaching-guided dApp lives in `erc8004-x402-example/dapp`.
+
+### Option A) Local demo (Hardhat)
+
+```bash
+# terminal 1
+npm run node
+
+# terminal 2
+npm run deploy:localhost
+
+# terminal 3
+cd dapp
+npm install
+npm run dev
+```
+
+### Option B) Shareable demo (Base Sepolia + Vercel)
+
+1) Deploy contracts to Base Sepolia (requires a funded deployer key):
+
+```bash
+cp .env.example .env
+# edit .env to set DEPLOYER_PRIVATE_KEY
+npm run deploy:baseSepolia
+```
+
+2) Run the dApp locally (it supports Base Sepolia):
+
+```bash
+cd dapp
+npm install
+npm run dev
+```
+
+3) Deploy `dapp/` to Vercel.
+
+See `dapp/README.md` for the Agent / Buyer / Validator UX flows.
+
 ## 測試涵蓋的重點
 
 - Identity: register、setAgentURI
